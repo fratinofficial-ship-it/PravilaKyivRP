@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>KYIV RP Rules</title>
 
-<link rel="icon" type="image/x-icon" href="image_247890.png">
+<link rel="icon" type="image/x-icon" href="KyivRP (faveicon).png">
 
 <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -317,6 +317,7 @@ button:nth-child(16){animation-delay:0.85s;}
         <button onclick="openModal(13)">14. Уникнення покарання</button>
         <button onclick="openModal(14)">15. Територія</button>
         <button onclick="openModal(15)">16. Державні роботи</button>
+        <button onclick="openModal(16)">17. Зелені зони</button>
     </div>
 </div>
 
@@ -328,7 +329,7 @@ button:nth-child(16){animation-delay:0.85s;}
 </div>
 
 <script>
-const categories=["Правила дорожнього руху","Зброя","Голосовий чат","Атака","NRP-Поведінка","Грабування","NRP-Поліція","Буллінг","Суд","Реклама","Чіти","Bunnyhop","Процесуальні дії","Уникнення покарання","Територія","Державні роботи"];
+const categories=["Правила дорожнього руху","Зброя","Голосовий чат","Атака","NRP-Поведінка","Грабування","NRP-Поліція","Буллінг","Суд","Реклама","Чіти","Bunnyhop","Процесуальні дії","Уникнення покарання","Територія","Державні роботи","Зелені зони"];
 
 const rules=[
 [
@@ -437,6 +438,13 @@ const rules=[
 "16.2 Поламав машину державному робітнику|ПОКАРАННЯ: Компенсація на розсуд державного робітника",
 "16.3 Прикриття злочинця на погоні|ПОКАРАННЯ: Депорт 2 доби або Штраф 5000€",
 "16.4 Береш машини за HARS без відома гравця чи без нього|ПОКАРАННЯ: Попередження або Штраф 3000€",
+],
+[
+"17 Бійки в зеленій зоні|ПОКАРАННЯ: Попередження/Депорт 1 доба (залежитьвід тяжкості)",
+"17.1 Рейд в зеленій зоні|ПОКАРАННЯ: Депорт назавжди",
+"17.2 Стрілянина в зеленій зоні|ПОКАРАННЯ: Депорт 7 діб",
+"17.3 Вбивство в зеленій зоні|ПОКАРАННЯ: Депорт (тимчасовий/назавжди)",
+"17.4 Носити Бронижелет та маску в зеленій зоні|ПОКАРАННЯ: Штраф 4000€",
 ]
 ];
 
@@ -451,6 +459,21 @@ function openModal(i){
     title.className='category-title';
     title.textContent=categories[i]||'';
     r.appendChild(title);
+
+    r.appendChild(title);
+
+if(i === 16){
+    const img = document.createElement('img');
+    img.src = "image_247891.png";
+
+    img.style.width = "100%";
+    img.style.maxWidth = "450px";
+    img.style.display = "block";
+    img.style.margin = "15px auto 25px";
+    img.style.borderRadius = "16px";
+    img.style.boxShadow = "0 0 25px rgba(59,130,246,0.3)";
+    r.appendChild(img);
+}
 
     rules[i].forEach(t=>{
         let d=document.createElement('div');
